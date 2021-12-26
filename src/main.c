@@ -17,7 +17,11 @@ int main(void) {
 	return 0;
 }
 
-
+/*
+ * brief: this function checks if an expression is balanced or not
+ * param. : (input) A pointer to the expression to be checked
+ * return: (output) A pointer to the string Balanced or Not Balanced depending on the check
+ */
 uint8_t* balancedParentheses(uint8_t* pu8_expression){
 
 	while(*pu8_expression){
