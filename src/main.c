@@ -8,33 +8,33 @@
 #include "stack.h"
 #include "main.h"
 int main(void) {
-	uint8_t expression[100];
+	uint8_t au8_expression[100];
 	printf("Enter the expression: ");
 	fflush(stdout);
-	gets(expression);
-	uint8_t *it = expression;
+	gets(au8_expression);
+	uint8_t *it = au8_expression;
 	printf("%s", balancedParentheses(it));
 	return 0;
 }
 
 
-uint8_t* balancedParentheses(uint8_t* expression){
+uint8_t* balancedParentheses(uint8_t* pu8_expression){
 
-	while(*expression){
-		if(*expression == '{' || *expression == '[' || *expression == '('){
-			push(*expression);
+	while(*pu8_expression){
+		if(*pu8_expression == '{' || *pu8_expression == '[' || *pu8_expression == '('){
+			push(*pu8_expression);
 		}
-		else if(*expression == '}' || *expression == ']' || *expression == ')'){
+		else if(*pu8_expression == '}' || *pu8_expression == ']' || *pu8_expression == ')'){
 			if(isEmpty()){
 				return "Not Balanced";
 			}
 			else{
-				uint8_t data = pop();
-				 if((data == '{' && *expression == '}') ||
-					(data == '[' && *expression == ']') ||
-					(data == '(' && *expression == ')'))
+				uint8_t u8_data = pop();
+				 if((u8_data == '{' && *pu8_expression == '}') ||
+					(u8_data == '[' && *pu8_expression == ']') ||
+					(u8_data == '(' && *pu8_expression == ')'))
 				{
-					expression++;
+					pu8_expression++;
 					continue;
 				}
 				 else{
@@ -42,7 +42,7 @@ uint8_t* balancedParentheses(uint8_t* expression){
 				 }
 			}
 		}
-		expression++;
+		pu8_expression++;
 	}
 	if(isEmpty()){
 		return "Balanced";

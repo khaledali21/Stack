@@ -9,16 +9,16 @@
  */
 
 #include "stack.h"
-uint8_t stack[MAX_SIZE];
-int8_t top = -1;
+uint8_t au8_stack[MAX_SIZE];
+int8_t s8_top = -1;
 void push(uint8_t data){
-	if(top + 1 < MAX_SIZE){
-		stack[++top] = data;
+	if(s8_top + 1 < MAX_SIZE){
+		au8_stack[++s8_top] = data;
 	}
 }
 uint8_t pop(void){
-	if(top > -1){
-		return stack[top--];
+	if(s8_top > -1){
+		return au8_stack[s8_top--];
 	}
 	else{
 		return -1;
@@ -26,7 +26,7 @@ uint8_t pop(void){
 }
 
 uint8_t isEmpty(void){
-	if(top > -1){
+	if(s8_top > -1){
 		return 0;
 	}
 	else{
@@ -35,10 +35,10 @@ uint8_t isEmpty(void){
 }
 
 void printStack(void){
-	uint8_t* index = stack;
-	while(*index){
-		printf("%c ", *index);
-		index++;
+	uint8_t* pu8_index = au8_stack;
+	while(*pu8_index){
+		printf("%c ", *pu8_index);
+		pu8_index++;
 	}
 	printf("\n");
 }
