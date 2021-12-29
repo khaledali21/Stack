@@ -8,12 +8,12 @@
 #include "stack.h"
 #include "main.h"
 int main(void) {
-	uint8_t au8_expression[100];
+	uint8_t au8_expression[MAX_SIZE];
 	printf("Enter the expression: ");
 	fflush(stdout);
 	gets(au8_expression);
-	uint8_t *it = au8_expression;
-	printf("%s", balancedParentheses(it));
+//	uint8_t *it = au8_expression;
+	printf("%s", balancedParentheses(au8_expression));
 	return 0;
 }
 

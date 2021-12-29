@@ -12,7 +12,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 
-#define MAX_SIZE 1000
+#define MAX_SIZE 127
 
 void push(uint8_t u8_data);
 
